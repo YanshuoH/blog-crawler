@@ -10,4 +10,13 @@ node src/index.js --sites sina --sites sohu --sites renren -n 500
 
 * `-n` equals to `--number` which limites blog count. Often set to 1 for test purpose.
 
+## Post processing
+* Convertion: trim whitespaces and trailing line breaks
+
+  `node script/post-process.js`
+
+* Combine: all converted files will be combined into one single txt file
+
+  `node script/combine.js`
+
 ## MIT license
