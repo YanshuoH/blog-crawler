@@ -6,6 +6,10 @@
   "author": "Yanshuo H <yanshuo.huang@gmail.com>",
   "license": "MIT",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YanshuoH/blog-crawler.git"
+  },
   "scripts": {
     "prettier": "prettier --single-quote --trailing-comma es5 --write \"src/**/*.js\"",
     "precommit": "lint-staged"
@@ -14,13 +18,13 @@
     "*.{js,json,css,md}": ["prettier --write", "git add"]
   },
   "dependencies": {
-    "async": "^2.6.0",
     "cheerio": "^1.0.0-rc.2",
+    "command-line-args": "^5.0.1",
     "csv-parse": "^2.0.0",
     "encoding": "^0.1.12",
+    "fetch-retry": "^1.1.1",
     "he": "^1.1.1",
     "node-fetch": "^2.0.0",
-    "selenium-webdriver": "^4.0.0-alpha.1",
     "striptags": "^3.1.1"
   },
   "devDependencies": {

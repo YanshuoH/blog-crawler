@@ -1,9 +1,7 @@
 const fs = require('fs');
-const path = require('path');
-const async = require('async');
 const parse = require('csv-parse');
 
-function sohuDataLoader(cb) {
+function csvDataLoader(filepath, cb) {
   const parser = parse({});
   var output = [];
   parser.on('readable', () => {
@@ -21,10 +19,7 @@ function sohuDataLoader(cb) {
     cb(null, output);
   });
 
-  const SohuInputFile = path.join(__dirname, '../data/sohu.csv');
-  fs.createReadStream(SohuInputFile).pipe(parser);
+  fs.createReadStream(filepath).pipe(parser);
 }
 
-module.exports = cb => {
-  async.parallel([sohuDataLoader], cb);
-};
+module.exports = csvDataLoader;
